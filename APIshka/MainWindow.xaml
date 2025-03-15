@@ -1,0 +1,25 @@
+﻿<Window x:Class="APIshka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:APIshka"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <TextBox x:Name="SearchBox" Width="200" Margin="10" 
+                 VerticalAlignment="Top" 
+                 TextChanged="SearchBox_TextChanged" 
+                 Text="Search..."/>
+        <ListView x:Name="FactsListView" Margin="10,40,10,10" 
+                  MouseDoubleClick="FactsListView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Fact" DisplayMemberBinding="{Binding Text}" Width="500"/>
+                    <GridViewColumn Header="Number" DisplayMemberBinding="{Binding Number}" Width="100"/>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
